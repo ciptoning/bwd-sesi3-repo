@@ -5,9 +5,9 @@
 // 1. DATABASE SEMENTARA (Simulasi Array Data Produk)
 // Nanti di UAS, data ini akan diambil dari MySQL via CodeIgniter.
 const dataProduk = [
-    { id: 1, nama: "Paket Website Basic", harga: 1500000, icon: "fa-laptop-code" },
-    { id: 2, nama: "Jasa SEO Audit", harga: 800000, icon: "fa-magnifying-glass-chart" },
-    { id: 3, nama: "Manajemen Sosmed", harga: 2500000, icon: "fa-hashtag" }
+    { id: 1, nama: "Langganan SaaS", harga: 3500000, icon: "fa-laptop-code" },
+    { id: 2, nama: "Onboarding & Implementasi", harga: 1500000, icon: "fa-magnifying-glass-chart" },
+    { id: 3, nama: "Training & Sertifikasi", harga: 750000, icon: "fa-hashtag" }
 ];
 
 // STATE APLIKASI (Variabel untuk melacak status transaksi)
@@ -27,13 +27,13 @@ const promoAlert = document.getElementById('promo-alert');
 // ==========================================
 // TUGAS 1: LOOPS (Otomatisasi Tampilan UI)
 // ==========================================
-btnTampilkan.addEventListener('click', function() {
+btnTampilkan.addEventListener('click', function () {
     // Menghapus pesan kosong
-    katalogContainer.innerHTML = ''; 
+    katalogContainer.innerHTML = '';
 
     // TODO MAHASISWA: Gunakan 'for loop' untuk menampilkan dataProduk ke layar.
     // Petunjuk: Loop dari 0 sampai dataProduk.length
-    
+
     for (let i = 0; i < dataProduk.length; i++) {
         // Membuat elemen HTML untuk setiap produk
         let produkCard = `
@@ -69,7 +69,7 @@ function tambahKeKeranjang(hargaProduk) {
     // 2. Update UI (DOM Manipulation)
     badgeKeranjang.textContent = jumlahItem;
     displayTotal.textContent = 'Rp ' + totalKeranjang.toLocaleString('id-ID');
-    
+
     // Aktifkan tombol checkout karena keranjang sudah tidak kosong
     btnCheckout.classList.remove('disabled');
 
@@ -83,12 +83,12 @@ function tambahKeKeranjang(hargaProduk) {
 // ==========================================
 function cekPromoOtomatis() {
     const teksPromo = document.getElementById('promo-text');
-    
+
     // TODO MAHASISWA: Buat logika IF/ELSE. 
-    // Jika totalKeranjang LEBIH DARI Rp 2.000.000, berikan pesan diskon.
+    // Jika totalKeranjang LEBIH DARI Rp 1.000.000, berikan pesan diskon.
     // Jika tidak, hilangkan pesan diskon/beri pesan upselling.
 
-    if (totalKeranjang > 2000000) {
+    if (totalKeranjang >= 5000000) {
         // Tampilkan peringatan promo
         promoAlert.classList.remove('d-none');
         promoAlert.classList.replace('alert-info', 'alert-success');
@@ -97,7 +97,7 @@ function cekPromoOtomatis() {
         // Sembunyikan peringatan jika total turun (opsional untuk keranjang dinamis)
         // Untuk saat ini, kita beri dorongan upselling
         promoAlert.classList.remove('d-none');
-        teksPromo.textContent = `Tambah Rp ${(2000000 - totalKeranjang).toLocaleString('id-ID')} lagi untuk dapat Diskon 10%!`;
+        teksPromo.textContent = `Tambah Rp ${(5000000 - totalKeranjang).toLocaleString('id-ID')} lagi untuk dapat Diskon 10%!`;
     }
 }
 
@@ -105,16 +105,16 @@ function cekPromoOtomatis() {
 // ==========================================
 // TUGAS 4: EVENT LISTENER (Titik Konversi Akhir)
 // ==========================================
-btnCheckout.addEventListener('click', function() {
+btnCheckout.addEventListener('click', function () {
     // Feedback visual seketika untuk meredakan kecemasan pengguna (DOM Manipulation)
     btnCheckout.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Memproses Pesanan...';
     btnCheckout.classList.replace('btn-primary', 'btn-success');
-    
+
     // Simulasi jeda server (nanti akan diganti dengan request CodeIgniter)
     setTimeout(() => {
         alert(`Transaksi Berhasil!\nTotal Pembayaran: Rp ${totalKeranjang.toLocaleString('id-ID')}\nTerima kasih telah berbelanja.`);
-        
+
         // Reset aplikasi setelah transaksi selesai
-        location.reload(); 
+        location.reload();
     }, 1500);
 });
