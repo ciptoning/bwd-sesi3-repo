@@ -23,7 +23,7 @@
             <a class="navbar-brand fw-bold" href="#"><i class="fa-solid fa-store text-warning"></i> TokoDigital</a>
             <div class="d-flex align-items-center">
                 <!-- Elemen ini akan diubah isinya oleh JavaScript -->
-                <button class="btn btn-outline-warning position-relative me-3">
+                <button id="btn-cart" class="btn btn-outline-warning position-relative me-3">
                     <i class="fa-solid fa-cart-shopping"></i>
                     <span id="cart-badge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                         0
