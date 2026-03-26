@@ -5,9 +5,12 @@
 // 1. DATABASE SEMENTARA (Simulasi Array Data Produk)
 // Nanti di UAS, data ini akan diambil dari MySQL via CodeIgniter.
 const dataProduk = [
-    { id: 1, nama: "Paket Website Basic", harga: 1500000, icon: "fa-laptop-code" },
-    { id: 2, nama: "Jasa SEO Audit", harga: 800000, icon: "fa-magnifying-glass-chart" },
-    { id: 3, nama: "Manajemen Sosmed", harga: 2500000, icon: "fa-hashtag" }
+    { id: 1, nama: "DearGlow Brightening Facial Wash", harga: 150000 },
+    { id: 2, nama: "DearGlow Essence Toner Rose", harga: 225000 },
+    { id: 3, nama: "DearGlow Glowing Serum Gold", harga: 450000 },
+    { id: 4, nama: "DearGlow Day Cream UV Protection", harga: 185000 },
+    { id: 5, nama: "DearGlow Night Repair Cream", harga: 210000 },
+    { id: 6, nama: "DearGlow Luxury Body Lotion", harga: 320000 }
 ];
 
 // STATE APLIKASI (Variabel untuk melacak status transaksi)
@@ -88,17 +91,17 @@ function cekPromoOtomatis() {
     // Jika totalKeranjang LEBIH DARI Rp 2.000.000, berikan pesan diskon.
     // Jika tidak, hilangkan pesan diskon/beri pesan upselling.
 
-    if (totalKeranjang > 2000000) {
-        // Tampilkan peringatan promo
-        promoAlert.classList.remove('d-none');
-        promoAlert.classList.replace('alert-info', 'alert-success');
-        teksPromo.textContent = "Selamat! Anda berhak mendapat Diskon 10% saat Checkout.";
-    } else {
-        // Sembunyikan peringatan jika total turun (opsional untuk keranjang dinamis)
-        // Untuk saat ini, kita beri dorongan upselling
-        promoAlert.classList.remove('d-none');
-        teksPromo.textContent = `Tambah Rp ${(2000000 - totalKeranjang).toLocaleString('id-ID')} lagi untuk dapat Diskon 10%!`;
-    }
+    // TUGAS 3: CONDITIONALS (Logika Promo Bisnis)
+if (totalKeranjang > 750000) { 
+    // Tampilkan peringatan promo
+    promoAlert.classList.remove('d-none');
+    // Ganti warna jadi info (biru) karena ini pesan upselling
+    promoAlert.classList.replace('alert-success', 'alert-info'); 
+    teksPromo.textContent = "Satu langkah lagi! Tambah belanjaan hingga 1 Juta untuk potong ongkir Rp 50.000!";
+} else {
+    // Sembunyikan jika di bawah 750rb
+    promoAlert.classList.add('d-none');
+}
 }
 
 

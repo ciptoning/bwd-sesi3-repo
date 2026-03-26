@@ -20,7 +20,7 @@
     <!-- NAVBAR dengan Badge Keranjang Dinamis -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="#"><i class="fa-solid fa-store text-warning"></i> TokoDigital</a>
+            <a class="navbar-brand fw-bold" href="#"><i class="fa-solid fa-gem"></i> DearGlowᥫ᭡</a>
             <div class="d-flex align-items-center">
                 <!-- Elemen ini akan diubah isinya oleh JavaScript -->
                 <button class="btn btn-outline-warning position-relative me-3">
@@ -34,10 +34,10 @@
     </nav>
 
     <!-- HEADER / HERO -->
-    <header class="bg-primary text-white text-center py-5">
-        <div class="container py-4">
-            <h1 class="display-4 fw-bold">Katalog Produk Otomatis</h1>
-            <p class="lead">Menggunakan JavaScript untuk render data dan menghitung total belanja.</p>
+    <<header class="text-white text-center py-5" style="background-color: #ffc0cb;">
+        <<div style="background-color: #ffc0cb;">
+            <h1 class="display-4 fw-bold">Koleksi Eksklusif DearGlow</h1>
+            <p class="lead">Perawatan kulit premium dengan formula terbaik untuk hasil maksimal.</p>
         </div>
     </header>
 
@@ -56,7 +56,7 @@
             <div id="katalog-container" class="row g-4">
                 <div class="col-12 text-center text-muted py-5" id="pesan-kosong">
                     <i class="fa-solid fa-box-open fa-3x mb-3"></i>
-                    <p>Klik tombol hijau di atas untuk memuat katalog via JavaScript.</p>
+                    <p>Tambahkan ke keranjang</p>
                 </div>
             </div>
         </section>
