@@ -4,10 +4,26 @@
 
 // 1. DATABASE SEMENTARA (Simulasi Array Data Produk)
 // Nanti di UAS, data ini akan diambil dari MySQL via CodeIgniter.
-const dataProduk = [
-    { id: 1, nama: "Paket Website Basic", harga: 1500000, icon: "fa-laptop-code" },
-    { id: 2, nama: "Jasa SEO Audit", harga: 800000, icon: "fa-magnifying-glass-chart" },
-    { id: 3, nama: "Manajemen Sosmed", harga: 2500000, icon: "fa-hashtag" }
+    const produk = [
+  { nama: "Laptop Pro", harga: 18000000, kategori: "Elektronik" },
+  { nama: "Kamera DSLR", harga: 12000000, kategori: "Fotografi" },
+  { nama: "Headset Gaming", harga: 2500000, kategori: "Aksesoris" }
+];
+
+const container = document.getElementById("produk-container");
+produk.forEach(item => {
+  const col = document.createElement("div");
+  col.className = "col-md-4";
+  col.innerHTML = `
+    <div class="card product-card p-3 h-100">
+      <h4>${item.nama}</h4>
+      <p>Kategori: ${item.kategori}</p>
+      <p class="text-success fw-bold">Rp ${item.harga.toLocaleString('id-ID')}</p>
+      <button class="btn btn-warning w-100">Beli Sekarang</button>
+    </div>
+  `;
+  container.appendChild(col);
+});
 ];
 
 // STATE APLIKASI (Variabel untuk melacak status transaksi)
