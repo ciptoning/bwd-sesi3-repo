@@ -15,7 +15,11 @@
         .product-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
     </style>
 </head>
-<body>
+<body><!-- Kontainer Produk -->
+<div class="container mt-5">
+  <h2>Daftar Produk</h2>
+  <div id="produk-container" class="row g-4"></div>
+</div>
 
     <!-- NAVBAR dengan Badge Keranjang Dinamis -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
@@ -90,6 +94,6 @@
     </main>
 
     <!-- Menghubungkan file logika bisnis (Harus ditaruh paling bawah sebelum tutup body) -->
-    <script src="<?= base_url('js/script.js') ?>"></script>
+    <script src="<?= base_url('js/script.js') ?>"></script><script src="../../public/js/produk-render.js"></script>
 </body>
 </html>
