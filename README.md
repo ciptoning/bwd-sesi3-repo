@@ -1,5 +1,10 @@
 # CodeIgniter 4 Application Starter
 
+<p align="center">
+    <img src="img/img1.png" width="45%">
+    <img src="img/img2.png" width="45%">
+</p>
+
 ## What is CodeIgniter?
 
 CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
